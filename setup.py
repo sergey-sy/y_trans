@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="y_trans",
-    version="0.0.1c",
+    version="0.0.1d",
     author="sergey-sy",
     author_email="maiyashik@gmail.com",
     description="Machine translation with Yandex.Translate API",
@@ -13,6 +13,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/sergey-sy/y_trans",
     scripts=["bin/y_trans"],
+    keywords=["yandex", "yandex translate", "yandex translator", "translator"],
+    install_requares=["requests"]
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

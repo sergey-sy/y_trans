@@ -1,6 +1,6 @@
 #!usr/bin/env python3
 
-from y_trans import *
+from y_trans import Translator
 
 def translate(text: str) -> str:
     trans = Translator()

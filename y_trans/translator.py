@@ -36,11 +36,13 @@ class Translator(object):
         """Set string value to api_key"""
         if IsString.isstring(api_key):
             self._api_key = api_key
+            self.__key = api_key
 
     @api_key.deleter
     def api_key(self):
         """Set trial_key to _api_key"""
-        self._api_key = self.__get_trial_key()
+        self._api_key = ''
+        self.__key = self.__get_trial_key()
 
 
     def __get_trial_key(self): #  private function
@@ -70,9 +72,16 @@ class Translator(object):
                 self.data
         )
 
-        result = str(*json.loads(r.text)['text'])
-        print('Запрос ушёл', text) # для отладки
-        return result
+        try:
+            result = str(*json.loads(r.text)['text'])
+            return result
+        except KeyError:
+            raise TranslatorException(
+                """
+                No response from the server.
+                Check the validity of your api_key.
+                """
+                )
 
 
     def get_translation(self, text='') -> str:
@@ -80,6 +89,7 @@ class Translator(object):
         It makes text translation
         """
         if IsString.isstring(text) and text:
+
             return self._post_request(text)
         else:
             return ''

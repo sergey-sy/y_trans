@@ -89,7 +89,6 @@ class Translator(object):
         It makes text translation
         """
         if IsString.isstring(text) and text:
-
             return self._post_request(text)
         else:
             return ''

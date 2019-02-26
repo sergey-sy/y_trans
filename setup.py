@@ -5,14 +5,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="y_trans",
-    version="0.0.1",
+    version="0.0.1b",
     author="sergey-sy",
     author_email="maiyashik@gmail.com",
     description="Machine translation with Yandex.Translate API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/sergey-sy/y_trans",
-    download_url="https://github.com/sergey-sy/y_trans/archive/v0.0.1.tar.gz",
+    download_url="https://github.com/sergey-sy/y_trans/archive/v0.0.1b.tar.gz",
     keywords=["yandex", "yandex translate", "yandex translator", "translator"],
     scripts=["bin/y_trans"],
     packages=setuptools.find_packages(),
